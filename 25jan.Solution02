@@ -1,0 +1,17 @@
+Q2
+#include <iostream>
+using namespace std;
+
+class Base {
+};
+class Derived : public Base {
+};
+
+int main() {
+    Derived* derivedPointer = new Derived();
+    Base* basePointer = dynamic_cast<Base*>(derivedPointer);
+    cout << "Original pointer: " << derivedPointer << endl;
+    cout << "Converted pointer: " << basePointer << endl;
+    delete derivedPointer;
+    return 0;
+}
